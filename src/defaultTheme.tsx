@@ -35,7 +35,7 @@ export type ThemePalette = {
     }
 }
 
-export const defaultTheme: Theme = {
+export const defaultTheme: ThemePalette = {
     "color": {
         "dark": {
             "primary": {
