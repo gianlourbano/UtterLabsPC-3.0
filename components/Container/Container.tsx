@@ -1,5 +1,5 @@
 import { CSSProperties } from "react"
-import { useTheme, useThemeDispatch } from "../../src/Theme"
+import { useTheme, usePalette } from "../../src/Theme"
 
 interface ContainerProps {
     vertical?: boolean,
@@ -9,13 +9,13 @@ interface ContainerProps {
 }
 
 const Container: React.FC<ContainerProps> = ({ center, vertical, bgSecondary, children, style}) => {
-    const { background } = useTheme()
-    const dispatch = useThemeDispatch()
+    const { background } = usePalette()
+    const theme = useTheme()
 
     const contStyle: CSSProperties = {
         display: "flex", flexDirection: vertical ? "column" : "row",
         justifyContent: center ? "center" : "",
-        backgroundColor: !bgSecondary ? `${background[dispatch].primary}` : `${background[dispatch].secondary}`
+        backgroundColor: !bgSecondary ? `${background[theme].primary}` : `${background[theme].secondary}`
     }
     
     return(
