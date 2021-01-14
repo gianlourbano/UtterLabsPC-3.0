@@ -1,16 +1,16 @@
 import { useReducer } from "react"
-import { Theme, defaultTheme } from "./defaultTheme"
+import { ThemePalette, defaultTheme } from "./defaultTheme"
 import { createStrictContext } from "../Useful stuff/StrictContext"
 
 type Action = {type: "switch"}
 type Dispatch = (action: Action) => void
-type State = "dark" | "light"
+type Theme = "dark" | "light"
 
-const [PaletteProvider, usePalette] = createStrictContext<Theme | undefined>(undefined)
-const [ThemeProvider_, useTheme] = createStrictContext<"dark" | "light" | undefined>(undefined)
+const [PaletteProvider, usePalette] = createStrictContext<ThemePalette | undefined>(undefined)
+const [ThemeProvider_, useTheme] = createStrictContext<Theme | undefined>(undefined)
 const [ThemeDispatcher, useThemeDispatch] = createStrictContext<Dispatch | undefined>(undefined)
 
-const themeReducer = (state: State, action: Action) : State => {
+const themeReducer = (state: Theme, action: Action) : Theme => {
     switch(action.type) {
         case "switch": {
             if(state === "dark") return "light"

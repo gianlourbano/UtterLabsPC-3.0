@@ -1,4 +1,4 @@
-export type Theme = {
+export type ThemePalette = {
     "color": {
         "dark": {
             "primary": {
