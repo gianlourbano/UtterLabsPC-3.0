@@ -1,7 +1,7 @@
 .cardlist {
     display: flex;
     flex-grow: 1;
-    padding: 2rem;
+    padding: 4rem;
     overflow-x: scroll;
 
     border-radius: 10px 10px 0px 10px;
@@ -35,11 +35,27 @@
     box-shadow: -10px 0 20px 3px #000;
 }
 
-.side {
-    display: block;
+.cardlist:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    bottom: 2.6rem;
+    width: 5px;
+    border-radius: 5px;
+    background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+    box-shadow: -10px 0 20px 3px #000;
+
+    z-index: 1;
+
 }
 
-@media screen and (max-width: 800) {
+.side {
+    flex-grow: 1;
+    margin-left: 3rem;
+}
+
+@media screen and (max-width: 800px) {
     .side {
         display: none;
     }

@@ -7,13 +7,13 @@ import { CSSProperties } from "react"
 
 const UpperPart: React.FC = () => {
     return(
-        <Container>
+        <Container style={{padding: "1vh"}}>
             <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh" }} >
 
             </Card>
-            <Card className={styles.side} color={["secondary", "shade"]} style={{ flexGrow: 1, marginLeft: "2rem", }}>
-
-            </Card>
+            <div className={styles.side}>
+                <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh" }} ></Card>
+            </div>
         </Container>
     )
 }
@@ -28,7 +28,7 @@ const MiddlePart: React.FC = () => {
     }
 
     return(
-        <Container style={{maxWidth: "90vw", alignSelf: "center", margin: "1rem", position: "relative"}}>
+        <Container style={{maxWidth: "90vw", alignSelf: "center", position: "relative"}}>
             <section className={styles.cardlist}>
                 <ComputerCard />
                 <ComputerCard />
