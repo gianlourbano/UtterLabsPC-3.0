@@ -1,0 +1,31 @@
+.card {
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    height: 350px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    overflow: hidden;
+}
+
+.card:focus-within~.card, .card:hover~.card {
+    transform: translateX(130px);
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+.card:not(:first-child) {
+    margin-left: -130px;
+}

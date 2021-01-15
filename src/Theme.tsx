@@ -1,39 +1,81 @@
-import { useReducer } from "react"
-import { ThemePalette, defaultTheme } from "./defaultTheme"
-import { createStrictContext } from "../Useful stuff/StrictContext"
+type main = "primary" | "secondary" | "tertiary"
+type sec = "main" | "shade"
 
-type Action = {type: "switch"}
-type Dispatch = (action: Action) => void
-type Theme = "dark" | "light"
+export type Color = [main, sec]
 
-const [PaletteProvider, usePalette] = createStrictContext<ThemePalette | undefined>(undefined)
-const [ThemeProvider_, useTheme] = createStrictContext<Theme | undefined>(undefined)
-const [ThemeDispatcher, useThemeDispatch] = createStrictContext<Dispatch | undefined>(undefined)
+export type Palette = {
+    "primary": {
+        "main": string,
+        "shade": string,
+    },
+    "secondary": {
+        "main": string,
+        "shade": string,
+    },
+    "tertiary": {
+        "main": string,
+        "shade": string,
+    },
+}
 
-const themeReducer = (state: Theme, action: Action) : Theme => {
-    switch(action.type) {
-        case "switch": {
-            if(state === "dark") return "light"
-            else if(state === "light") return "dark"
-        }
-        default: {
-            throw new Error(`Unhandled action type: ${action.type}`)
-        }
+export type BackgroundPalette = {
+    "primary": string,
+    "secondary": string,
+    "shadow": string,
+}
+
+export type ThemePalette = {
+    "color": {
+        "dark": Palette,
+        "light": Palette,
+    },
+    "background": {
+        "light": BackgroundPalette,
+        "dark": BackgroundPalette,
     }
 }
 
-export const ThemeProvider: React.FC = ({ children }) => {
-    const [state, dispatch] = useReducer(themeReducer, "light")
-    
-    return(
-        <PaletteProvider value={defaultTheme}>
-            <ThemeProvider_ value={state}>
-                <ThemeDispatcher value={dispatch}>
-                    {children}
-                </ThemeDispatcher>
-            </ThemeProvider_>
-        </PaletteProvider>
-    )
+export const defaultTheme: ThemePalette = {
+    "color": {
+        "dark": {
+            "primary": {
+                "main": "#dfdfdf",
+                "shade": "#F9F871",
+            },
+            "secondary": {
+                "main": "#134555",
+                "shade": "#00747A",
+            },
+            "tertiary": {
+                "main": "#29A685",
+                "shade": "#8AD37B",
+            },
+        },
+        "light": {
+            "primary": {
+                "main": "#4e4f50",
+                "shade": "#F9F871",
+            },
+            "secondary": {
+                "main": "#8AD37B",
+                "shade": "#00747A",
+            },
+            "tertiary": {
+                "main": "#29A685",
+                "shade": "#8AD37B",
+            },
+        }
+    },
+    "background": {
+        "dark": {
+            "primary": "#1a1e24",
+            "secondary": "whitesmoke",
+            "shadow": "#8d8a8a"
+        },
+        "light": {
+            "primary": "whitesmoke",
+            "secondary": "#191d22",
+            "shadow": "#979797",
+        }
+    }
 }
-
-export {usePalette, useTheme, useThemeDispatch}

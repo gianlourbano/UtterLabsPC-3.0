@@ -4,8 +4,9 @@ import styles from '../styles/Home.module.css'
 import Header from "../components/Header/Header"
 import Container from "../components/Container/Container"
 import Typography from "../components/Typography/Typography"
+import Home_ from "../components/Home/index"
 
-import { ThemeProvider } from "../src/Theme"
+import { ThemeProvider } from "../src/ThemeProvider"
 
 export default function Home() {
   return (
@@ -14,10 +15,10 @@ export default function Home() {
         <title>UtterLabsPC</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ThemeProvider>
+      <ThemeProvider theme="light">
         <Header />
-        <Container center style={{minWidth: "100vw"}}>
-          <Typography>hello there</Typography>
+        <Container vertical style={{minWidth: "100vw", flexGrow: 1, marginTop: 70, padding: "2rem"}}>
+          <Home_ />
         </Container>
       </ThemeProvider>
     </div>
