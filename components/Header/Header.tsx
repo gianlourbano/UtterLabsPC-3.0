@@ -13,14 +13,16 @@ const Logo: React.FC = () => {
         borderRadius: 20,
         paddingLeft: 10,
         paddingRight: 10,
+        flexGrow: 1,
 
+        justifyContent: "center",
         alignItems: "center",
     }
 
     return (
         <Container style={style}>
             <Image src="/Logo.png"
-                alt="Picture of the author"
+                alt=""
                 width={70}
                 height={70}/>
             <Typography type="h1" style={{ marginLeft: 10 }}>UtterLabsPC</Typography>
@@ -33,14 +35,14 @@ const Header: React.FC = () => {
     const theme = useTheme()
 
     const customContStyle: CSSProperties = {
-        minHeight: 80,
+        height: 80,
         alignItems: "center",
     }
 
     return (
         <header className={styles.main}>
             <Container colortype={["secondary", "shade"]} center style={{ ...customContStyle }}>
-                <Typography staticColor>Hello pex</Typography>
+                <Typography staticColor style={{ flexGrow: 4}}>Hello pex</Typography>
                 <Logo />
                 <ThemeSwitcher />
             </Container>

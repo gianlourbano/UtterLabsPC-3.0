@@ -70,7 +70,7 @@ export const defaultTheme: ThemePalette = {
         "dark": {
             "primary": "#1a1e24",
             "secondary": "whitesmoke",
-            "shadow": "#8d8a8a"
+            "shadow": "#000"
         },
         "light": {
             "primary": "whitesmoke",

@@ -1,6 +1,8 @@
 import { relative } from "path"
 import { CSSProperties, useEffect, useRef, useState } from "react"
 import { useThemeDispatch } from "../../src/ThemeProvider"
+import Container from "../Container/Container"
+import Typography from "../Typography/Typography"
 
 interface WrapperProps {
     onClick: () => void
@@ -10,9 +12,9 @@ const Wrapper: React.FC<WrapperProps> = ({onClick, children}) => {
     const style: CSSProperties = {
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "space-evenly",
+        alignSelf: "center",
         width: 100,
-        padding: 10,
         borderRadius: 10
     }
     
@@ -71,12 +73,22 @@ const ThemeSwitcher: React.FC = () => {
         dispatch({ type: "switch" })
     }, [isOn])
 
+    const style: CSSProperties = {
+        alignItems: "center",
+        flexGrow: 4,
+        maxHeight: 80,
+        justifyContent: "flex-end",
+        marginRight: "2rem"
+    }
+
     return(
-        <Wrapper onClick={() => setIsOn(!isOn)}>
-            <Groove>
-                <Handle isOn={isOn}/>
-            </Groove>
-        </Wrapper>
+        <Container colortype={["secondary", "shade"]} style={style}>
+            <Wrapper onClick={() => setIsOn(!isOn)}>
+                <Groove>
+                    <Handle isOn={isOn} />
+                </Groove>
+            </Wrapper>
+        </Container>
     )
 }
 

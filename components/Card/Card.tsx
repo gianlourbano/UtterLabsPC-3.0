@@ -13,10 +13,12 @@ const Card: React.FC<CardProps> = ({ color, children, className, style }) => {
     
     const cardStyle: CSSProperties = {
         borderRadius: 20,
+        paddingLeft: 20,
+        paddingRight: 20,
     }
     
     return(
-        <Container className={className} style={{...cardStyle, ...style}} colortype={color}>
+        <Container className={className} style={{...cardStyle, ...style}} colortype={color} >
             {children}
         </Container>
     )
