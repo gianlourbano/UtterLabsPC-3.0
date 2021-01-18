@@ -75,20 +75,18 @@ const ThemeSwitcher: React.FC = () => {
 
     const style: CSSProperties = {
         alignItems: "center",
-        flexGrow: 4,
         maxHeight: 80,
         justifyContent: "flex-end",
-        marginRight: "2rem"
     }
 
     return(
-        <Container colortype={["secondary", "shade"]} style={style}>
+        <div style={style}>
             <Wrapper onClick={() => setIsOn(!isOn)}>
                 <Groove>
                     <Handle isOn={isOn} />
                 </Groove>
             </Wrapper>
-        </Container>
+        </div>
     )
 }
 

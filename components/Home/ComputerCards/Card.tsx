@@ -7,7 +7,7 @@ const Card: React.FC = () => {
     const theme = useTheme()
     
     return(
-        <article className={styles.card} style={{ background: `${background[theme].primary}`, boxShadow: `-1rem 0 2rem ${background[theme].shadow}`}}>
+        <article className={styles.card} style={{ background: `${background[theme].primary}`, boxShadow: `-2rem 0 3rem -2rem ${background[theme].shadow}`}}>
             <header className={styles.cardHeader}>
                 <Typography type="p">May 25th 2020</Typography>
                 <Typography type="h2">CSS tricks!</Typography>

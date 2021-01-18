@@ -29,10 +29,6 @@
     margin-left: -130px;
 }
 
-.card:first-child() {
-    box-shadow: none;
-}
-
 @media screen and (max-width: 1200px) {
     .card {
         height: 300px;

@@ -6,6 +6,8 @@ import { usePalette, useTheme } from "../../src/ThemeProvider"
 import { CSSProperties } from "react"
 import Image from "next/image"
 import Typography from "../Typography/Typography"
+import NewsCard from "./NewsCard/NewsCard"
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
 
 const UpperPart: React.FC = () => {
     const {color} = usePalette()
@@ -13,28 +15,19 @@ const UpperPart: React.FC = () => {
     
     return(
         <Container style={{padding: "1vh"}}>
-            <Card style={
-                { 
-                    flexGrow: 3, 
-                    height: "45vh",
-                    background: `linear-gradient(45deg, ${color[theme].secondary.shade}, ${color[theme].tertiary.shade})`
-                }
-            }></Card>
+            <NewsCard />
             <div className={styles.side}>
-                <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh" }} ></Card>
+                <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh", padding: 20 }} ><ThemeSwitcher /></Card>
             </div>
+            <img />
         </Container>
     )
 }
 
 const MiddlePart: React.FC = () => {
 
-    const {color} = usePalette()
+    const {color, background} = usePalette()
     const theme = useTheme()
-
-    const style: CSSProperties = {
-        backgroundColor: `${color[theme].tertiary.main}`
-    }
 
     return(
         <main className={styles.middle} >
@@ -60,7 +53,7 @@ const MiddlePart: React.FC = () => {
 
 const Home: React.FC = () => {
     return(
-        <Container vertical>
+        <Container vertical className={styles.home}>
             <UpperPart />
             <MiddlePart />
         </Container>

@@ -40,7 +40,7 @@ export const defaultTheme: ThemePalette = {
         "dark": {
             "primary": {
                 "main": "#dfdfdf",
-                "shade": "#F9F871",
+                "shade": "#4e4f50",
             },
             "secondary": {
                 "main": "#134555",
@@ -54,7 +54,7 @@ export const defaultTheme: ThemePalette = {
         "light": {
             "primary": {
                 "main": "#4e4f50",
-                "shade": "#F9F871",
+                "shade": "#dfdfdf",
             },
             "secondary": {
                 "main": "#8AD37B",
