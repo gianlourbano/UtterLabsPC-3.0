@@ -49,7 +49,8 @@ const Handle: React.FC<{isOn: boolean}> = ({isOn}) => {
         borderRadius: "50%",
         background: "linear-gradient(145deg, #fff, #99959e)",
         transform: `translateX(${isOn ? "40PX" : "0px"})`,
-        transition: "0.35s"
+        transition: "0.35s",
+        cursor: "pointer",
     }
     
     return(

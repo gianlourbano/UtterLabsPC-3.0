@@ -33,12 +33,12 @@ const Header: React.FC = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    }, [offset])
+    }, [])
 
     return (
         <header className={styles.main} style={{transform: `translateY(${-offset* 0.5}px)`}}>
             <div className={styles.headerSection}>
-                <Typography staticColor type="h1">Scroll down to see the parallax effect</Typography>
+                <h1 className={styles.labs}>Welcome to UtterLabs!</h1>
                 <Typography staticColor type="h2">Background landcape scrolls with its own depth </Typography>
             </div>
         </header>

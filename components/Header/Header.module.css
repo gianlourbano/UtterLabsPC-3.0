@@ -21,10 +21,32 @@
   opacity: 0.3;
 }
 
+.labs {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #134555; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .12em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(90, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #134555; }
+}
+
 .headerSection {
     position: relative;
   padding: 15% 0 10%;
-  max-width: 640px;
+  max-width: 50vw;
   margin-left: auto;
   margin-right: auto;
   color: white;
