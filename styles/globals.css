@@ -14,6 +14,10 @@ p {
    font-size: 2.3vh;
 }
 
+h1 {
+  font-size: 5vh;
+}
+
 a {
   color: inherit;
   text-decoration: none;
