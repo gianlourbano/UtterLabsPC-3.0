@@ -74,14 +74,8 @@ const ThemeSwitcher: React.FC = () => {
         dispatch({ type: "switch" })
     }, [isOn])
 
-    const style: CSSProperties = {
-        alignItems: "center",
-        maxHeight: 80,
-        justifyContent: "flex-end",
-    }
-
     return(
-        <div style={style}>
+        <div>
             <Wrapper onClick={() => setIsOn(!isOn)}>
                 <Groove>
                     <Handle isOn={isOn} />

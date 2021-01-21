@@ -3,7 +3,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 30rem;
+  height: 50vh;
   background-image: url("../../public/header2.jpg");
   background-position: center;
   background-size: cover;
@@ -33,21 +33,27 @@
   justify-content: space-evenly;
 
   padding: 1rem 0rem;
-  width: 30vw;
 
   animation: progress 1s linear;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
   animation-iteration-count: 1;
-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 @keyframes progress {
   from {
-    width: 30vw;
+    width: 40vw;
   }
+  80% {
+    width: 100vw;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
   to {
     background-color:#134555;
+    box-shadow: 1px 1px 3rem #292929;
     width: 100vw;
   }
 }
@@ -68,6 +74,51 @@ animation-fill-mode: both;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 950px) {
-    
+.themeSwitch {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  right: 10px;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: #134555;
+
+  transform: translateY(-75%);
+  transition: .2s;
+}
+
+.themeSwitch:hover {
+  transform: translateY(0)
+}
+
+.menu {
+  height: 2rem;
+  width: 2rem;
+  justify-self: flex-end;
+
+  cursor: pointer;
+  transition: .1s
+}
+
+.menu:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1000px) {
+  .themeSwitch {
+    display: none;
+  }
+  
+  .links {
+    width: 100vw;
+    animation: none;
+    background-color: #134555;
+    box-shadow: 1px 1px 3rem #292929;
+  }
+
+}
+
+.link {
+  color:#DFDFDF;
+  position: relative;
 }

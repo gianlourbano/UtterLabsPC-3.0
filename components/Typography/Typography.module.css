@@ -1,6 +1,6 @@
 .typo {
-    transition: .2s;
-    -webkit-transition: .2s;
+    transition: .1s;
+    -webkit-transition: .1s;
     cursor: pointer;
 }
 

@@ -17,9 +17,8 @@ const UpperPart: React.FC = () => {
         <Container style={{padding: "1vh"}}>
             <NewsCard />
             <div className={styles.side}>
-                <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh", padding: 20 }} ><ThemeSwitcher /></Card>
+                <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh", padding: 20 }} ></Card>
             </div>
-            <img />
         </Container>
     )
 }
