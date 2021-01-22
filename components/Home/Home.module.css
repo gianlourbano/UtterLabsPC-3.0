@@ -4,6 +4,29 @@
   padding: 2rem 2rem;
 }
 
+.carousel {
+    
+}
+
+.news {
+   height: 100%;
+}
+
+.innerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding: 2rem 2rem;
+
+}
+
+@media screen and (max-width: 850px) {
+    .innerText {
+        padding: 0rem 2rem;
+    }
+}
+
 .cardlist {
     display: flex;
     flex-grow: 1;

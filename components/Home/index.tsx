@@ -3,22 +3,25 @@ import ComputerCard from "./ComputerCards/Card"
 import Container from "../Container/Container"
 import styles from "./Home.module.css"
 import { usePalette, useTheme } from "../../src/ThemeProvider"
-import { CSSProperties } from "react"
-import Image from "next/image"
 import Typography from "../Typography/Typography"
-import NewsCard from "./NewsCard/NewsCard"
-import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
+import Carousel from "../Carousel/Carousel"
+
+import { data } from "../Carousel/mockdata"
+import Slide from "../Carousel/Slide/Slide"
 
 const UpperPart: React.FC = () => {
     const {color} = usePalette()
     const theme = useTheme()
     
     return(
-        <Container style={{padding: "1vh"}}>
-            <NewsCard />
-            <div className={styles.side}>
-                <Card color={["secondary", "main"]} style={{ flexGrow: 3, height: "45vh", padding: 20 }} ></Card>
-            </div>
+        <Container style={{padding: "1vh", justifyContent: "center"}}>
+            <Carousel className={styles.carousel}>
+                {data.map((slide, index) => {
+                    return(
+                        <Slide title={slide.title} subtitle={slide.subtitle} text={slide.text} image={slide.image} key={index}/>
+                    )
+                })}
+            </Carousel>
         </Container>
     )
 }
