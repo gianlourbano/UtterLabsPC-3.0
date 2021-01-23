@@ -5,7 +5,8 @@ import styles from "./Home.module.css"
 import { usePalette, useTheme } from "../../src/ThemeProvider"
 import Typography from "../Typography/Typography"
 import Carousel from "../Carousel/Carousel"
-
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import { data } from "../Carousel/mockdata"
 import Slide from "../Carousel/Slide/Slide"
 
@@ -53,11 +54,57 @@ const MiddlePart: React.FC = () => {
     )
 }
 
+const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.2
+      }
+    }
+    
+  };
+  
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+  
+const LowerPart: React.FC = () => {
+    
+    const [ref, inView, entry] = useInView({
+        threshold: 0.5,
+        triggerOnce: false
+    });
+    
+    return(
+        <main className={styles.lower}>
+            <motion.section
+            className={styles.container}
+            variants={container}
+            initial="hidden"
+            ref={ref}
+            animate={inView ? 'visible' : 'hidden'}
+        >
+            {[0, 1, 2, 3].map((index) => (
+                <motion.div key={index} className={styles.item} variants={item} />
+            ))}
+        </motion.section>
+        </main>
+    )
+}
+
 const Home: React.FC = () => {
     return(
         <Container vertical className={styles.home}>
             <UpperPart />
             <MiddlePart />
+            <LowerPart />
         </Container>
     )
 }

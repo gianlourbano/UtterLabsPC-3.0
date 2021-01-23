@@ -141,3 +141,41 @@
         display: none;
     }
 }
+
+.lower {
+    width: 100%;
+    height: 50vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.magic {
+    height: 10vh;
+    width: 10vh;
+
+    border-radius: 50%;
+    background-color: white;
+}
+
+.container {
+    width: 150px;
+    height: 150px;
+    display: grid;
+    overflow: hidden;
+    margin: 0;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+  }
+  
+  .item {
+    background: white;
+    border-radius: 100%;
+  }
+  

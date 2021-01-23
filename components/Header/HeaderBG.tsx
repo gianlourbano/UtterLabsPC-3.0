@@ -1,7 +1,7 @@
 import styles from "./Header.module.css"
 import Container from "../Container/Container"
 import Typography from "../Typography/Typography"
-import React, { CSSProperties, useEffect, useState } from "react"
+import React, { CSSProperties, useLayoutEffect, useState } from "react"
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
 import { usePalette, useTheme } from "../../src/ThemeProvider"
 import Image from "next/image"
@@ -12,7 +12,7 @@ const HeaderBG: React.FC = () => {
 
     const [offset, setOffset] = useState(0)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         function handleScroll() {
             setOffset(window.pageYOffset);
         }

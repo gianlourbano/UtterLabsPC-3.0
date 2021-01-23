@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
 		return(
 			<>
-				<motion.h2 
+				<motion.h3
 					className={styles.link}
 					key={index}
 					whileHover={{
@@ -39,8 +39,7 @@ const Header: React.FC = () => {
 					}}
 				>
 					{link}
-				</motion.h2>
-				
+				</motion.h3>
 			</>
 		)
 	}
