@@ -30,3 +30,11 @@ h1, h2, h3, h4, h5, p {
 *, :after, :before {
     box-sizing: border-box;
 }
+
+button {
+  border: none;
+}
+
+button:focus {
+  border:none;
+}

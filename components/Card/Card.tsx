@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ color, children, img, className, style }) =
     }
     
     return(
-        <Container className={className} style={{ ...cardStyle, ...style }} colortype={color} >
+        <Container className={`${className} ${styles.container}`} style={{ ...cardStyle, ...style }} colortype={color} >
             {img && <img src={img.src} alt={img.alt} className={styles.img}/>}
             {children}
         </Container>

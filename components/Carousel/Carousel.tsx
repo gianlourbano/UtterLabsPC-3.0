@@ -1,5 +1,5 @@
 import Container from "../Container/Container"
-import {Children, CSSProperties, useState} from "react"
+import {Children, CSSProperties, useEffect, useState} from "react"
 import styles from "./Carousel.module.css"
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa"
 import { AnimatePresence, motion } from "framer-motion"
@@ -8,6 +8,7 @@ import { wrap } from "popmotion"
 import { images } from "./mockdata";
 
 type Action = {type: "increment" | "decrement"}
+type Timer = NodeJS.Timeout | undefined
 
 interface CarouselProps {
     autoPlay?: boolean,
@@ -54,6 +55,7 @@ const Carousel:React.FC<CarouselProps> = ({autoPlay, style, className, children}
     const total = Children.toArray(children)
     
     const [[page, direction], setPage] = useState([0, 0])
+    const [timer, setTimer] = useState<Timer>(undefined)
 
     const imageIndex = wrap(0, total.length, page)
 

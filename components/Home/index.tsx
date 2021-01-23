@@ -15,10 +15,10 @@ const UpperPart: React.FC = () => {
     
     return(
         <Container style={{padding: "1vh", justifyContent: "center"}}>
-            <Carousel className={styles.carousel}>
+            <Carousel className={styles.carousel} autoPlay>
                 {data.map((slide, index) => {
                     return(
-                        <Slide title={slide.title} subtitle={slide.subtitle} text={slide.text} image={slide.image} key={index}/>
+                        <Slide title={slide.title} subtitle={slide.subtitle} text={slide.text} img={{src:slide.image, alt:""}} key={index}/>
                     )
                 })}
             </Carousel>
