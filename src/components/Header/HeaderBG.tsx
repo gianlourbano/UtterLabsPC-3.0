@@ -1,35 +1,25 @@
 import styles from "./Header.module.css"
-import Container from "../Container/Container"
-import Typography from "../Typography/Typography"
-import React, { CSSProperties, useEffect, useState } from "react"
-import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
+import { Typography, Button } from "../components"
+import React, { useEffect, useState } from "react"
 import { usePalette, useTheme } from "../Theme/ThemeProvider"
-import Image from "next/image"
+
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 
 const HeaderBG: React.FC = () => {
-    const { background } = usePalette()
-    const theme = useTheme()
 
-    const [offset, setOffset] = useState(0)
-
-    useEffect(() => {
-        function handleScroll() {
-            setOffset(window.pageYOffset);
-        }
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
-    }, [])
+    const { scrollY } = useViewportScroll();
+    const y2 = useTransform(scrollY, [0, 1200], ["0vh", "-50vh"]);
 
     return (
-        <header className={styles.main} style={{transform: `translateY(${-offset* 0.5}px)`}}>
-            <div className={styles.headerSection}>
-                <div className={styles.line}><h1 className={styles.labs}>Welcome to UtterLabs!</h1></div>
-                <Typography staticColor type="h2">Background landcape scrolls with its own depth </Typography>
-            </div>
-        </header>
+        <motion.header className={styles.main} style={{y: y2}}>
+            <section className={styles.headerSection}>
+                <Typography type="h1" staticColor className={styles.labs}>Welcome to UtterLabs!</Typography>
+                <div className={styles.description}>
+                    <Typography type="h4" staticColor style={{marginBottom: "1rem"}}>The ultimate tool to create and share computer builds!</Typography>
+                    <Button type="h3">Create build!</Button>
+                </div>
+            </section>
+        </motion.header>
     )
 }
 

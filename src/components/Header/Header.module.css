@@ -10,6 +10,8 @@
   background-repeat: no-repeat;
 
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main::before {
@@ -37,20 +39,24 @@
   padding: 1rem 0rem;
 }
 
-.line {
-  display: inline-block;
-  text-align: center;
-}
-
 .headerSection {
+  flex-grow: 1;
   position: relative;
-  align-self: center;
-  justify-self: center;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 0 25vw;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .themeSwitch {

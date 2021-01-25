@@ -55,7 +55,6 @@ const Carousel:React.FC<CarouselProps> = ({autoPlay, style, className, children}
     const total = Children.toArray(children)
     
     const [[page, direction], setPage] = useState([0, 0])
-    const [timer, setTimer] = useState<Timer>(undefined)
 
     const imageIndex = wrap(0, total.length, page)
 

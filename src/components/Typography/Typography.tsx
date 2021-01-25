@@ -2,8 +2,10 @@ import { CSSProperties } from "react"
 import { useTheme, usePalette } from "../Theme/ThemeProvider"
 import styles from "./Typography.module.css"
 
+export type comp = "div" | "span" | "h1" | "h2" | "h3" | "h4" | "p"
+
 interface TextProps {
-    type?: "div" | "span" | "h1" | "h2" | "h3" | "h4" | "p",
+    type?: comp,
     style?: CSSProperties,
     secondary?: boolean,
     staticColor?: boolean,

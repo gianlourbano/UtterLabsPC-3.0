@@ -7,5 +7,6 @@ import Carousel from "./Carousel/Carousel"
 import Slide from "./Carousel/Slide/Slide"
 import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"
 import ComputerCard from "./ComputerCards/Card"
+import Button from "./Button/Button"
 
-export { Header, Container, Typography, Card, Carousel, Slide, ThemeSwitcher, PageContainer, ComputerCard }
+export { Header, Container, Typography, Card, Carousel, Slide, ThemeSwitcher, PageContainer, ComputerCard, Button }

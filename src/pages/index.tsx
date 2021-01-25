@@ -7,14 +7,13 @@ import {data} from "../components/Carousel/mockdata"
 import {useInView} from "react-intersection-observer"
 import ComputerCard from "../components/ComputerCards/Card"
 
+import Image from "next/image"
+
 import { motion } from 'framer-motion'
 
 const UpperPart: React.FC = () => {
-  const { color } = usePalette()
-  const theme = useTheme()
-
   return (
-    <Container style={{ justifyContent: "center" }}>
+    <Container>
       <Carousel className={styles.carousel} autoPlay>
         {data.map((slide, index) => {
           return (
@@ -27,27 +26,15 @@ const UpperPart: React.FC = () => {
 }
 
 const MiddlePart: React.FC = () => {
-
-  const { color, background } = usePalette()
-  const theme = useTheme()
-
   return (
     <main className={styles.middle} >
       <Container vertical className={styles.initialCard} colortype={["secondary", "shade"]}>
         <Typography staticColor className={styles.latest}>Latest builds</Typography>
-        <img src="/pc.png" className={styles.image} />
       </Container>
       <section className={styles.cardlist}>
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
-        <ComputerCard />
+        {[0, 1, 2, 3, 4, 5, 6].map(index => {
+          return <ComputerCard key={index} />
+        })}
       </section>
     </main>
   )
@@ -59,7 +46,7 @@ const container = {
     opacity: 1,
     scale: 1,
     transition: {
-      delayChildren: 0.5,
+      delayChildren: 0.1,
       staggerChildren: 0.2
     }
   }
@@ -95,7 +82,7 @@ const LowerPart: React.FC = () => {
           <motion.div className={`${styles.item} ${styles[style]}`}
             key={index}
             variants={item}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.01 }}
           ></motion.div>
         )
       })}
@@ -104,11 +91,13 @@ const LowerPart: React.FC = () => {
 }
 
 export default function Home() {
+  const {background} = usePalette()
+  const theme = useTheme()
 
   return (
-    <PageContainer vertical>
+    <PageContainer vertical noPadding>
       <HeaderBG />
-      <div className={styles.main}>
+      <div className={styles.main} style={{backgroundColor: background[theme].primary}}>
         <UpperPart />
         <MiddlePart />
         <LowerPart />

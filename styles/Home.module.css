@@ -2,7 +2,10 @@
   margin-top: 50vh;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
+
+  padding: 0 10vw;
+
 }
 
 .cardlist {
