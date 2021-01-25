@@ -1,6 +1,6 @@
 import { CSSProperties } from "react"
 import Container from "../Container/Container"
-import { Color } from "../../src/Theme"
+import { Color } from "../Theme/Theme"
 import styles from "./Card.module.css"
 
 type img = {

@@ -1,4 +1,4 @@
-import { usePalette, useTheme } from "../../src/ThemeProvider"
+import { usePalette, useTheme } from "../Theme/ThemeProvider"
 import Typography from "../Typography/Typography"
 import styles from "./Card.module.css"
 

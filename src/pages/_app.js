@@ -1,5 +1,5 @@
-import '../styles/globals.css'
-import { ThemeProvider } from "../src/ThemeProvider"
+import '../../styles/globals.css'
+import { ThemeProvider } from "../components/Theme/ThemeProvider"
 import Header from "../components/Header/Header"
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'

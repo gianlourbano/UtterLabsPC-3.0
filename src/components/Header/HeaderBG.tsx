@@ -3,7 +3,7 @@ import Container from "../Container/Container"
 import Typography from "../Typography/Typography"
 import React, { CSSProperties, useEffect, useState } from "react"
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
-import { usePalette, useTheme } from "../../src/ThemeProvider"
+import { usePalette, useTheme } from "../Theme/ThemeProvider"
 import Image from "next/image"
 
 const HeaderBG: React.FC = () => {

@@ -1,5 +1,5 @@
 import Card from "../../Card/Card"
-import { usePalette, useTheme } from "../../../src/ThemeProvider"
+import { usePalette, useTheme } from "../../Theme/ThemeProvider"
 import Typography from "../../Typography/Typography"
 import styles from "./Slide.module.css"
 import { motion } from "framer-motion"

@@ -1,6 +1,6 @@
 import { CSSProperties } from "react"
-import { useTheme, usePalette } from "../../src/ThemeProvider"
-import {Color} from "../../src/Theme"
+import { useTheme, usePalette } from "../Theme/ThemeProvider"
+import {Color} from "../Theme/Theme"
 
 export interface ContainerProps {
     vertical?: boolean,
