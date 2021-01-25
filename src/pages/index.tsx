@@ -1,8 +1,8 @@
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 
 import HeaderBG from "../components/Header/HeaderBG"
 import { Container, Typography, Carousel, Slide, PageContainer} from "../components/components"
-import {usePalette, useTheme} from "../src/ThemeProvider"
+import {usePalette, useTheme} from "../components/Theme/ThemeProvider"
 import {data} from "../components/Carousel/mockdata"
 import {useInView} from "react-intersection-observer"
 import ComputerCard from "../components/ComputerCards/Card"

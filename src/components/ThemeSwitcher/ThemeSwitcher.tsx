@@ -1,6 +1,6 @@
 import { relative } from "path"
 import { CSSProperties, useEffect, useRef, useState } from "react"
-import { useThemeDispatch } from "../../src/ThemeProvider"
+import { useThemeDispatch } from "../Theme/ThemeProvider"
 import Container from "../Container/Container"
 import Typography from "../Typography/Typography"
 
@@ -8,7 +8,7 @@ interface WrapperProps {
     onClick: () => void
 }
 
-const Wrapper: React.FC<WrapperProps> = ({onClick, children}) => {
+const Wrapper: React.FC<WrapperProps> = ({ onClick, children }) => {
     const style: CSSProperties = {
         display: "flex",
         alignItems: "center",
@@ -17,15 +17,15 @@ const Wrapper: React.FC<WrapperProps> = ({onClick, children}) => {
         width: 100,
         borderRadius: 10
     }
-    
-    return(
+
+    return (
         <label onClick={onClick} style={style}>
             {children}
         </label>
     )
 }
 
-const Groove: React.FC = ({children}) => {
+const Groove: React.FC = ({ children }) => {
     const style: CSSProperties = {
         position: "relative",
         width: 70,
@@ -33,15 +33,15 @@ const Groove: React.FC = ({children}) => {
         borderRadius: 30,
         boxShadow: "inset 5px 5px 10px #cccccc, inset -5px -5px 10px #73809b"
     }
-    
-    return(
+
+    return (
         <div style={style}>
             {children}
         </div>
     )
 }
 
-const Handle: React.FC<{isOn: boolean}> = ({isOn}) => {
+const Handle: React.FC<{ isOn: boolean }> = ({ isOn }) => {
     const style: CSSProperties = {
         width: 30,
         height: 30,
@@ -52,8 +52,8 @@ const Handle: React.FC<{isOn: boolean}> = ({isOn}) => {
         transition: "0.35s",
         cursor: "pointer",
     }
-    
-    return(
+
+    return (
         <div style={style}>
 
         </div>
@@ -74,7 +74,7 @@ const ThemeSwitcher: React.FC = () => {
         dispatch({ type: "switch" })
     }, [isOn])
 
-    return(
+    return (
         <div>
             <Wrapper onClick={() => setIsOn(!isOn)}>
                 <Groove>

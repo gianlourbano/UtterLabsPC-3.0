@@ -1,5 +1,5 @@
 import { CSSProperties } from "react"
-import { useTheme, usePalette } from "../../src/ThemeProvider"
+import { useTheme, usePalette } from "../Theme/ThemeProvider"
 import styles from "./Typography.module.css"
 
 interface TextProps {
@@ -30,7 +30,7 @@ const Typography: React.FC<TextProps> = ({ type = "div", staticColor, className,
         overflowY: "visible",
     }
 
-    const tStyle = type === "p" ? { ...pStyle, ...typoStyle} : typoStyle
+    const tStyle = type === "p" ? { ...pStyle, ...typoStyle } : typoStyle
 
     const basic = anim ? styles.typo : ""
 
