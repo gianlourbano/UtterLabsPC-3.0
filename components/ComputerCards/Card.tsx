@@ -1,5 +1,5 @@
-import { usePalette, useTheme } from "../../../src/ThemeProvider"
-import Typography from "../../Typography/Typography"
+import { usePalette, useTheme } from "../../src/ThemeProvider"
+import Typography from "../Typography/Typography"
 import styles from "./Card.module.css"
 
 const Card: React.FC = () => {

@@ -5,57 +5,44 @@ import HeaderBG from "./HeaderBG"
 
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
 
-import {motion} from "framer-motion"
+import {motion, useViewportScroll, useTransform} from "framer-motion"
 
-const links = ["Home", "Builds", "Shop", "Account"]
+const links = [ "Home", "Builds", "Shop", "Account"]
+const hrefs = [ "/", "/builds", "/shop", "/account"]
 
 import Link from "next/link"
 
-const Header: React.FC = () => {
+const _Link: React.FC<{ href: string, link: string }> = ({ href, link }) => {
 
-	useEffect(() => {
-		const setScroll = () => {
-			var string = (window.pageYOffset / 325).toString()
-			document.body.style.setProperty('--scroll', string)
-		}
-		
-		window.addEventListener('scroll', setScroll, false)
+	return (
+		<Link href={`${href.toLowerCase()}`}>
+			<motion.h3
+				className={styles.link}
+				whileHover={{
+					scale: 1.2,
+					transition: { duration: 0.1 },
+				}}
+			>
+				{link}
+			</motion.h3>
+		</Link>
+	)
+}
 
-		return () => {
-			window.removeEventListener("scrolL", setScroll, false)
-		}
-	  })
+const Header: React.FC = ({ children }) => {
 	
-	const _Link: React.FC<{index: number, link: string}> = ({index, link }) => {
-
-		return(
-			<>
-				<motion.h3
-					className={styles.link}
-					key={index}
-					whileHover={{
-						scale: 1.2,
-						transition: { duration: 0.1 },
-					}}
-				>
-					{link}
-				</motion.h3>
-			</>
-		)
-	}
-
 	return(
-		<>
+		<motion.div style={{overflow: "hidden"}}>
             <div className={styles.links}>
             	{links.map((link: string, index) => {
 					return(
-						<_Link link={link} index={index} />
+						<_Link link={link} href={hrefs[index]} key={index}/>
 					)
 				})}
             </div>
 			<div className={styles.themeSwitch}><ThemeSwitcher /></div>
-			<HeaderBG />
-		</>
+			{children}
+		</motion.div>
 	)
 }
 

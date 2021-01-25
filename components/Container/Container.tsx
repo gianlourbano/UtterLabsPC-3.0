@@ -2,7 +2,7 @@ import { CSSProperties } from "react"
 import { useTheme, usePalette } from "../../src/ThemeProvider"
 import {Color} from "../../src/Theme"
 
-interface ContainerProps {
+export interface ContainerProps {
     vertical?: boolean,
     style?: CSSProperties,
     center?: boolean,
