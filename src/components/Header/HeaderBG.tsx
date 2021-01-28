@@ -1,7 +1,5 @@
 import styles from "./Header.module.css"
 import { Typography, Button } from "../components"
-import React, { useEffect, useState } from "react"
-import { usePalette, useTheme } from "../Theme/ThemeProvider"
 
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 

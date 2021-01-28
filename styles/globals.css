@@ -7,8 +7,6 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden;
   background-color: #1A1E24;
-
-  font-size: calc(14px + (24 - 14) * ((100vw - 300px) / (1600 - 300)));
  
 }
 

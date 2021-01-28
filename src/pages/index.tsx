@@ -97,9 +97,8 @@ export default function Home() {
   return (
     <PageContainer vertical noPadding>
       <HeaderBG />
-      <div className={styles.main} style={{backgroundColor: background[theme].primary}}>
+      <div className={styles.main} style={{backgroundColor: background[theme].primary, zIndex: 1}}>
         <UpperPart />
-        <MiddlePart />
         <LowerPart />
       </div>
     </PageContainer>

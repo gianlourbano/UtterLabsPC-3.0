@@ -20,7 +20,7 @@ const fadeInUp = {
     }
 };
 
-const PageContainer: React.FC<ContainerProps & {noPadding: boolean}> = ({noPadding, vertical, center, className, style, children}) => {
+const PageContainer: React.FC<ContainerProps & {noPadding?: boolean}> = ({noPadding, vertical, center, className, style, children}) => {
     return(
         <motion.div variants={fadeInUp} 
                     initial='initial' 

@@ -93,14 +93,6 @@
   .themeSwitch {
     display: none;
   }
-  
-  .links {
-    width: 100vw;
-    animation: none;
-    background-color: #134555;
-    box-shadow: 1px 1px 3rem #292929;
-  }
-
 }
 
 .link {

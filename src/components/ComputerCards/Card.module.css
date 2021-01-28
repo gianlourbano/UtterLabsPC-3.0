@@ -4,10 +4,9 @@
     position: relative;
     flex-direction: column;
 
-    height: 350px;
-    width: 350px;
+    height: 450px;
+    width: 300px;
     min-width: 250px;
-    padding: 1.5rem;
 
     border-radius: 16px;
     transition: .2s;
@@ -31,7 +30,28 @@
 
 @media screen and (max-width: 1200px) {
     .card {
-        height: 300px;
         width: 300px;
     }
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+
+    padding: 1rem;
+}
+
+.date {
+    margin-left: 5px
+}
+
+.img {
+    height: 40%;
+    width: 100%; 
+    object-fit: cover;
+    box-shadow: 1px 3px 3 #000;
+}
+
+.content {
+
 }

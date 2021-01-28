@@ -7,11 +7,14 @@ const Card: React.FC = () => {
     const theme = useTheme()
     
     return(
-        <article className={styles.card} style={{ background: `${background[theme].primary}`, boxShadow: `-2rem 0 3rem -2rem ${background[theme].shadow}`}}>
+        <article className={styles.card} style={{ background: `${background[theme].primary}`, boxShadow: `-2rem 0 3rem -2rem ${background[theme].shadow}, 0 2rem 3rem -2rem ${background[theme].shadow} `}}>
             <header className={styles.cardHeader}>
-                <Typography type="p">May 25th 2020</Typography>
-                <Typography type="h2">CSS tricks!</Typography>
+                <Typography type="h4">Build</Typography><Typography type="p" className={styles.date}>May 25th 2020</Typography>
             </header>
+            <main>
+                <img src="./corsair.jpg" alt="" className={styles.img} />
+                <Typography type="h3" className={styles.title}>CSS tricks!</Typography>
+            </main>
         </article>
     )
 }

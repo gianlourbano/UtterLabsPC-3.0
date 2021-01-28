@@ -1,10 +1,10 @@
 .main {
-  margin-top: 50vh;
+  margin-top: 42vh;
   display: flex;
   flex-direction: column;
   width: 100vw;
 
-  padding: 0 10vw;
+  padding: 2rem 10vw;
 
 }
 

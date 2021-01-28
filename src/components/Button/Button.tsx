@@ -23,11 +23,6 @@ const Button: React.FC<ButtonProps> = ({type, children}) => {
 		<motion.button 
 			style={customStyle} 
 			className={styles.container}
-			whileHover={{
-				scale: 1.15,
-				transition: { duration: 0.1 },
-			  }}
-			  whileTap={{ scale: 1.05 }}
 		>
 			<Typography type={type}>{children}</Typography>
 		</motion.button>

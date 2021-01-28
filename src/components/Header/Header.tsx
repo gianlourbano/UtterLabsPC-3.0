@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react"
 import styles from "./Header.module.css"
-import Typography from "../Typography/Typography"
-import HeaderBG from "./HeaderBG"
 
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
 
-import {motion, useViewportScroll, useTransform} from "framer-motion"
+import {motion, useTransform, useViewportScroll} from "framer-motion"
 
 const links = [ "Home", "Builds", "Shop", "Account"]
 const hrefs = [ "/", "/builds", "/shop", "/account"]
@@ -31,15 +28,20 @@ const _Link: React.FC<{ href: string, link: string }> = ({ href, link }) => {
 
 const Header: React.FC = ({ children }) => {
 	
+	const { scrollY } = useViewportScroll()
+	const color = useTransform(scrollY, [0, 200], ["rgba(19, 69, 85, 0)", "rgba(19, 69, 85, 1)"])
+
 	return(
-		<motion.div style={{overflow: "hidden"}}>
-            <div className={styles.links}>
+		<motion.div 
+			style={{overflow: "hidden"}}
+		>
+            <motion.div className={styles.links} style={{background: color}}>
             	{links.map((link: string, index) => {
 					return(
 						<_Link link={link} href={hrefs[index]} key={index}/>
 					)
 				})}
-            </div>
+            </motion.div>
 			<div className={styles.themeSwitch}><ThemeSwitcher /></div>
 			{children}
 		</motion.div>
