@@ -20,6 +20,7 @@ export type Palette = {
 
 export type BackgroundPalette = {
     "primary": string,
+    "primaryShade": string,
     "secondary": string,
     "shadow": string,
 }
@@ -69,11 +70,13 @@ export const defaultTheme: ThemePalette = {
     "background": {
         "dark": {
             "primary": "#1a1e24",
+            "primaryShade": "#31343a",
             "secondary": "whitesmoke",
             "shadow": "#000"
         },
         "light": {
             "primary": "whitesmoke",
+            "primaryShade": "#dddddd",
             "secondary": "#191d22",
             "shadow": "#979797",
         }

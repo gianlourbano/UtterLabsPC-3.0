@@ -76,13 +76,12 @@ const LowerPart: React.FC = () => {
       animate={inView ? 'visible' : 'hidden'}
       className={styles.container}
     >
-      {[0, 1, 2, 3, 4].map((index) => {
+      {[0, 1, 2, 3].map((index) => {
         const style: string = "item" + (index + 1).toString()
         return (
           <motion.div className={`${styles.item} ${styles[style]}`}
             key={index}
             variants={item}
-            whileHover={{ scale: 1.01 }}
           ></motion.div>
         )
       })}
@@ -99,6 +98,9 @@ export default function Home() {
       <HeaderBG />
       <div className={styles.main} style={{backgroundColor: background[theme].primary, zIndex: 1}}>
         <UpperPart />
+        <LowerPart />
+      </div>
+      <div className={styles.secondary} style={{backgroundColor: background[theme].primaryShade, zIndex: 1}}>
         <LowerPart />
       </div>
     </PageContainer>
