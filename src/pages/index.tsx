@@ -1,13 +1,28 @@
 import styles from '../../styles/Home.module.css'
 
 import HeaderBG from "../components/Header/HeaderBG"
-import { Container, Typography, Carousel, Slide, PageContainer, Card} from "../components/components"
+import { Container, Typography, Carousel, Slide, PageContainer, Card, Button} from "../components/components"
 import {usePalette, useTheme} from "../components/Theme/ThemeProvider"
 import {data} from "../components/Carousel/mockdata"
 import {useInView} from "react-intersection-observer"
 import ComputerCard from "../components/ComputerCards/Card"
 
-const images = [null, "./corsair.jpg", "./nzxt.jpg", "./build.jpg"]
+const infocards = [
+  {
+    img: "./motherboard2.jpg",
+    text: "Plan",
+    text2: "Use our own pc plan builder here on Utterlabs to plan your perfect gaming rig!"
+  }, {
+    img: "./social.jpg",
+    text: "Share",
+    text2: ""
+  }, {
+    img: "./build.jpg",
+    text: "Build",
+    text2: ""
+  }
+
+]
 
 import { motion } from 'framer-motion'
 
@@ -50,8 +65,7 @@ const container = {
       staggerChildren: 0.2
     }
   }
-
-};
+}
 
 const item = {
   hidden: { y: 20, opacity: 0 },
@@ -59,13 +73,13 @@ const item = {
     y: 0,
     opacity: 1
   }
-};
+}
 
 const LowerPart: React.FC = () => {
 
   const [ref, inView, entry] = useInView({
     threshold: 0.7,
-    triggerOnce: false
+    triggerOnce: true
   });
 
   return (
@@ -77,13 +91,21 @@ const LowerPart: React.FC = () => {
         animate={inView ? 'visible' : 'hidden'}
         className={styles.container}
       >
-        {[0, 1, 2, 3].map((index) => {
+        {[0, 1, 2].map((index) => {
           const style: string = "item" + (index + 1).toString()
           return (
             <motion.div className={`${styles.item} ${styles[style]}`}
               key={index}
               variants={item}
-            ></motion.div>
+            >
+              <img className={styles.img} src={infocards[index].img} alt="" />
+                <div className={styles.content}>
+                  <Typography type="h2">{infocards[index].text}</Typography>
+                  <Typography type="p">{infocards[index].text2}</Typography>
+                  <Button>PC Builder</Button>
+                </div>
+                
+            </motion.div>
           )
         })}
       </motion.section>
