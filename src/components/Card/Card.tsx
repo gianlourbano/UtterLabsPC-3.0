@@ -17,16 +17,13 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ color, children, img, className, style }) => {
     
-    const cardStyle: CSSProperties = {
-        borderRadius: 30,
-        position: "relative",
-    }
-    
     return(
-        <Container className={`${className} ${styles.container}`} style={{ ...cardStyle, ...style }} colortype={color} >
+        <div className={`${className} ${styles.container}`} style={{ ...style }} >
             {img && <img src={img.src} alt={img.alt} className={styles.img}/>}
-            {children}
-        </Container>
+            <div>
+                {children}
+            </div>
+        </div>
     )
 }
 

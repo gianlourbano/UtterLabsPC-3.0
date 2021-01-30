@@ -1,13 +1,13 @@
 import styles from '../../styles/Home.module.css'
 
 import HeaderBG from "../components/Header/HeaderBG"
-import { Container, Typography, Carousel, Slide, PageContainer} from "../components/components"
+import { Container, Typography, Carousel, Slide, PageContainer, Card} from "../components/components"
 import {usePalette, useTheme} from "../components/Theme/ThemeProvider"
 import {data} from "../components/Carousel/mockdata"
 import {useInView} from "react-intersection-observer"
 import ComputerCard from "../components/ComputerCards/Card"
 
-import Image from "next/image"
+const images = [null, "./corsair.jpg", "./nzxt.jpg", "./build.jpg"]
 
 import { motion } from 'framer-motion'
 
@@ -64,28 +64,30 @@ const item = {
 const LowerPart: React.FC = () => {
 
   const [ref, inView, entry] = useInView({
-    threshold: 0.5,
+    threshold: 0.7,
     triggerOnce: false
   });
 
   return (
-    <motion.section
-      variants={container}
-      initial="hidden"
-      ref={ref}
-      animate={inView ? 'visible' : 'hidden'}
-      className={styles.container}
-    >
-      {[0, 1, 2, 3].map((index) => {
-        const style: string = "item" + (index + 1).toString()
-        return (
-          <motion.div className={`${styles.item} ${styles[style]}`}
-            key={index}
-            variants={item}
-          ></motion.div>
-        )
-      })}
-    </motion.section>
+    <section>
+      <motion.section
+        variants={container}
+        initial="hidden"
+        ref={ref}
+        animate={inView ? 'visible' : 'hidden'}
+        className={styles.container}
+      >
+        {[0, 1, 2, 3].map((index) => {
+          const style: string = "item" + (index + 1).toString()
+          return (
+            <motion.div className={`${styles.item} ${styles[style]}`}
+              key={index}
+              variants={item}
+            ></motion.div>
+          )
+        })}
+      </motion.section>
+    </section>
   )
 }
 
