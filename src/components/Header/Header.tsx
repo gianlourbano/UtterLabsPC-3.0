@@ -4,8 +4,8 @@ import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher"
 
 import {motion, useTransform, useViewportScroll} from "framer-motion"
 
-const links = [ "Home", "Builds", "Shop", "Account"]
-const hrefs = [ "/", "/builds", "/shop", "/account"]
+const links = [ "Home", "Builds", "Builder", "Account"]
+const hrefs = [ "/", "/builds", "/builder", "/account"]
 
 import Link from "next/link"
 
@@ -29,7 +29,7 @@ const _Link: React.FC<{ href: string, link: string }> = ({ href, link }) => {
 const Header: React.FC = ({ children }) => {
 	
 	const { scrollY } = useViewportScroll()
-	const color = useTransform(scrollY, [0, 200], ["rgba(19, 69, 85, 0)", "rgba(19, 69, 85, 1)"])
+	const color = useTransform(scrollY, [0, 75, 200], ["rgba(19, 69, 85, 0)", "rgba(19, 69, 85, 0)", "rgba(19, 69, 85, 1)"])
 
 	return(
 		<motion.div 

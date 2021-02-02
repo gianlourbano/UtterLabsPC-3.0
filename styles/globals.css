@@ -7,6 +7,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden;
   background-color: #1A1E24;
+  scroll-behavior: smooth;
  
 }
 

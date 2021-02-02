@@ -114,6 +114,10 @@
     .side {
         display: none;
     }
+
+    .main {
+        padding: 2rem 2vh;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -183,16 +187,19 @@
     position: absolute;
     z-index: 2;
     height: 100%;
-    padding: 2rem;
+    width: 100%;
+    padding: 0 2vw;
 
     display: grid;
     grid-template-columns: 2fr 5fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: .5fr 1fr 2fr 1fr .5fr ;
     grid-gap: 10px;
     grid-template-areas: 
+    "..... ....."
     "title ....."
     "p     p    "
-    "btn   .....";
+    "btn   ....."
+    "..... .....";
 
 }
 
