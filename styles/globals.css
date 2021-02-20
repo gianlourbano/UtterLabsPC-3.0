@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
+:root {
+  --radius: 7px;
+  --parallax-height: 100vh;
+}
+
 html,
 body {
   padding: 0;
@@ -9,6 +14,29 @@ body {
   background-color: #1A1E24;
   scroll-behavior: smooth;
  
+  font-size: calc(14px + (23 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+body::-webkit-scrollbar-track
+{
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #686868;
+}
+
+body::-webkit-scrollbar
+{
+  width: 15px;
+  background-color: rgb(49, 53, 58);
+}
+
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgb(49, 53, 58);
 }
 
 a {
@@ -19,6 +47,10 @@ a {
 h1, h2, h3, h4, h5, p {
     margin: 0;
     padding: 0;
+}
+
+h1 {
+  font-size: calc(50px + (100 - 50) * ((100vw - 300px) / (1600 - 300)));
 }
 
 *, :after, :before {

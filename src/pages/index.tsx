@@ -1,7 +1,7 @@
 import styles from '../../styles/Home.module.css'
 
 import HeaderBG from "../components/Header/HeaderBG"
-import { Container, Typography, Carousel, Slide, PageContainer, Card, Button} from "../components/components"
+import { Container, Typography, Carousel, Slide, PageContainer, Card, Button, CardsCarousel} from "../components/components"
 import {usePalette, useTheme} from "../components/Theme/ThemeProvider"
 import {data} from "../components/Carousel/mockdata"
 import {useInView} from "react-intersection-observer"
@@ -21,7 +21,6 @@ const infocards = [
     text: "Build",
     text2: ""
   }
-
 ]
 
 import { motion } from 'framer-motion'
@@ -99,12 +98,11 @@ const LowerPart: React.FC = () => {
               variants={item}
             >
               <img className={styles.img} src={infocards[index].img} alt="" />
-                <div className={styles.content}>
-                  <Typography type="h2">{infocards[index].text}</Typography>
-                  <Typography type="p">{infocards[index].text2}</Typography>
-                  <Button>PC Builder</Button>
-                </div>
-                
+              <div className={styles.content}>
+                <Typography type="h2">{infocards[index].text}</Typography>
+                <Typography type="p">{infocards[index].text2}</Typography>
+                <Button>PC Builder</Button>
+              </div>
             </motion.div>
           )
         })}
@@ -120,12 +118,12 @@ export default function Home() {
   return (
     <PageContainer vertical noPadding>
       <HeaderBG />
-      <div className={styles.main} style={{backgroundColor: background[theme].primary, zIndex: 1}}>
+      <div id="main" className={styles.main} style={{backgroundColor: background[theme].primary, zIndex: 1}}>
         <UpperPart />
         <LowerPart />
       </div>
       <div className={styles.secondary} style={{backgroundColor: background[theme].primaryShade, zIndex: 1}}>
-        <LowerPart />
+        <CardsCarousel />
       </div>
     </PageContainer>
     

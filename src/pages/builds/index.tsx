@@ -1,11 +1,18 @@
-import { PageContainer, Typography } from "../../components/components"
+import { PageContainer, Typography, Carousel, Slide } from "../../components/components"
 import Link from "next/link"
+
+import {data} from "../../components/Carousel/mockdata"
 
 const Builds: React.FC = () => {
     return(
         <PageContainer>
-            <Typography type="h1">Builds!</Typography>
-            <Link href="/">Go back</Link>
+            <Carousel>
+                {data.map((slide, index) => {
+                    return (
+                        <Slide title={slide.title} subtitle={slide.subtitle} text={slide.text} img={{ src: slide.image, alt: "" }} key={index} />
+                    )
+                })}
+            </Carousel>
         </PageContainer>
     )
 }

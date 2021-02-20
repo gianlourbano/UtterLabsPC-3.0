@@ -2,6 +2,12 @@
     height: 90vh;
 }
 
+@media screen and (max-width: 1000px) {
+    .mb {
+        height: 50vh;
+    }
+}
+
 
 .motherboard {
     position: relative;

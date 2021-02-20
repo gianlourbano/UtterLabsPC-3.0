@@ -108,7 +108,11 @@ const Builder: React.FC = () => {
                     <Container style={{ width: "50vw" }} center>
                         <Motherboard />
                     </Container>
-                    
+                    <Container style={{ width: "50vw" }} className={styles.buttons}>
+                        <main>
+                            <header></header>
+                        </main>
+                    </Container>
         </PageContainer>
     )
 }

@@ -1,0 +1,42 @@
+.userData {
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-areas: 
+		"img ... ..."
+		"img div div"
+		"img ... ..."
+	;
+	grid-gap: 1rem;
+
+	min-width: 50%;
+	max-width: 30rem;
+
+	border-radius: 30px;
+}
+
+.userData>div {
+	grid-area: div;
+}
+
+.userData>img {
+	grid-area: img;
+	border-radius: 50%;
+	justify-self: center;
+	height: 10rem;
+}
+
+.content {
+	width: 100%;
+}
+
+.favourites {
+	
+}
+
+.favourites>* {
+	height: 30vh;
+	padding: 1rem;
+	border-radius: 20px;
+}
