@@ -3,19 +3,20 @@ type sec = "main" | "shade"
 
 export type Color = [main, sec]
 
+export type PaletteColor = {
+    "main": string,
+    "light": string,
+    "dark": string,
+    "text": string
+}
+
 export type Palette = {
-    "primary": {
-        "main": string,
-        "shade": string,
-    },
-    "secondary": {
-        "main": string,
-        "shade": string,
-    },
-    "tertiary": {
-        "main": string,
-        "shade": string,
-    },
+    "primary": PaletteColor,
+    "secondary": PaletteColor,
+    "error"?: PaletteColor,
+    "warning"?: PaletteColor,
+    "info"?: PaletteColor,
+    "success"?: PaletteColor,
 }
 
 export type BackgroundPalette = {
@@ -36,47 +37,48 @@ export type ThemePalette = {
     }
 }
 
+
 export const defaultTheme: ThemePalette = {
     "color": {
         "dark": {
             "primary": {
-                "main": "#dfdfdf",
-                "shade": "#4e4f50",
+                "main": "#9c27b0",
+                "light": "#ba68c8",
+                "dark": "#7b1fa2",
+                "text": "#dfdfdf"
             },
             "secondary": {
-                "main": "#134555",
-                "shade": "#00747A",
-            },
-            "tertiary": {
-                "main": "#29A685",
-                "shade": "#8AD37B",
+                "main": "#9c27b0",
+                "light": "#c1b",
+                "dark": "#72f",
+                "text": "#dfdfdf"
             },
         },
         "light": {
             "primary": {
-                "main": "#4e4f50",
-                "shade": "#dfdfdf",
+                "main": "#9c27b0",
+                "light": "#ba68c8",
+                "dark": "#7b1fa2",
+                "text": "#dfdfdf"
             },
             "secondary": {
-                "main": "#8AD37B",
-                "shade": "#00747A",
-            },
-            "tertiary": {
-                "main": "#29A685",
-                "shade": "#8AD37B",
+                "main": "#9c27b0",
+                "light": "#ba68c8",
+                "dark": "#7b1fa2",
+                "text": "#dfdfdf"
             },
         }
     },
     "background": {
         "dark": {
-            "primary": "#1a1e24",
-            "primaryShade": "#31343a",
+            "primary": "#141414",
+            "primaryShade": "#0F0F0F",
             "secondary": "whitesmoke",
             "shadow": "#000"
         },
         "light": {
             "primary": "whitesmoke",
-            "primaryShade": "#dddddd",
+            "primaryShade": "#dfdfdf",
             "secondary": "#191d22",
             "shadow": "#979797",
         }

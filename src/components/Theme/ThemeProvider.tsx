@@ -1,5 +1,5 @@
 import { useReducer } from "react"
-import { ThemePalette, defaultTheme } from "./Theme"
+import { ThemePalette, PaletteColor, defaultTheme } from "./Theme"
 import { createStrictContext } from "../../../Useful stuff/StrictContext"
 
 type Action = { type: "switch" }
@@ -20,6 +20,10 @@ const themeReducer = (state: Theme, action: Action): Theme => {
             throw new Error(`Unhandled action type: ${action.type}`)
         }
     }
+}
+
+export const createGradient = (color: PaletteColor) => {
+    return `linear-gradient(145deg, ${color.dark}, ${color.light})`
 }
 
 export const ThemeProvider: React.FC<{ theme?: Theme }> = ({ theme = "light", children }) => {

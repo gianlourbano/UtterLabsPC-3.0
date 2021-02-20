@@ -16,14 +16,7 @@ interface CarouselProps {
     style?: CSSProperties
 }
 
-const Dot: React.FC<{i: number, state: number}> = ({i, state}) => {
-    
-    const classname = `${styles.dot} ${i == state && styles.active}`
 
-    return(
-        <div className={classname}></div>
-    )
-}
 
 const variants = {
     enter: (direction: number) => {
@@ -60,6 +53,19 @@ const Carousel:React.FC<CarouselProps> = ({autoPlay, style, className, children}
 
     const paginate = (newDirection: number) => {
         setPage([page + newDirection, newDirection])
+    }
+
+    const Dot: React.FC<{i: number, state: number}> = ({i, state}) => {
+    
+        const classname = `${styles.dot} ${i == state && styles.active}`
+    
+        return(
+            <motion.div 
+                whileHover={{scale: 1.3}} 
+                className={classname} 
+                onClick={() => setPage([i, 1])}
+            ></motion.div>
+        )
     }
 
     return(

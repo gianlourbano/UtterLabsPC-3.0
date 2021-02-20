@@ -1,17 +1,21 @@
 import { usePalette, useTheme } from "../Theme/ThemeProvider"
-import { motion, Spring } from "framer-motion"
+import { motion } from "framer-motion"
 import styles from "./Button.module.css"
 import { CSSProperties } from "react"
 
 import Typography, { comp } from "../Typography/Typography"
+import { useRouter } from "next/router"
 
 interface ButtonProps {
 	type?: comp
+	onClick?: () => void
+	goto?: string
 }
 
-const Button: React.FC<ButtonProps> = ({type, children}) => {
+const Button: React.FC<ButtonProps> = ({onClick, goto, type, children}) => {
 	const {color, background} = usePalette()
 	const theme = useTheme()
+	const router = useRouter()
 	
 	const customStyle: CSSProperties = {
 		backgroundColor: background[theme].primary,
@@ -23,6 +27,8 @@ const Button: React.FC<ButtonProps> = ({type, children}) => {
 		<motion.button 
 			style={customStyle} 
 			className={styles.container}
+			onClick={goto ? () => router.push(`/${goto}`) : onClick}
+			
 		>
 			<Typography type={type}>{children}</Typography>
 		</motion.button>

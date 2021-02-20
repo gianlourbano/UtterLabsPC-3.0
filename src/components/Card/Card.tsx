@@ -1,5 +1,5 @@
 import { CSSProperties } from "react"
-import Container from "../Container/Container"
+import { Typography, Button } from "../components"
 import { Color } from "../Theme/Theme"
 import styles from "./Card.module.css"
 
@@ -8,21 +8,30 @@ type img = {
     alt: string
 }
 
+type content = {
+    text: string,
+    text2: string,
+    button: string,
+}
+
 interface CardProps {
     color?: Color,
     style?: CSSProperties,
     className?: string,
-    img?: img
+    img?: img,
+    content: content
 }
 
-const Card: React.FC<CardProps> = ({ color, children, img, className, style }) => {
+const Card: React.FC<CardProps> = ({ content, color, children, img, className, style }) => {
     
     return(
-        <div className={`${className} ${styles.container}`} style={{ ...style }} >
-            {img && <img src={img.src} alt={img.alt} className={styles.img}/>}
-            <div>
-                {children}
-            </div>
+        <div className={`${styles.item}`}>
+            <img className={styles.img} src={img.src} alt={img.alt} />
+            <div className={styles.content}>
+                <Typography type="h2">{content.text}</Typography>
+                <Typography type="p">{content.text2}</Typography>
+                <Button>{content.button}</Button>
+              </div>
         </div>
     )
 }
