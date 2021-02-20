@@ -5,13 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start "
   },
   "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "@types/next-auth": "^3.1.24",
     "animate.css": "^4.1.1",
+    "apollo-server": "^2.21.0",
+    "dotenv": "^8.2.0",
     "framer-motion": "^3.2.1",
+    "graphql": "^15.5.0",
+    "mysql": "^2.18.1",
     "next": "10.0.5",
+    "next-auth": "^3.4.1",
     "popmotion": "^9.1.0",
+    "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
